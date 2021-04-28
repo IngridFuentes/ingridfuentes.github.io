@@ -1724,7 +1724,7 @@ input, select, textarea {
 		input[type="reset"].alt,
 		button.alt,
 		.button.alt {
-			background-color: #444;
+			background-color: #f5ebeb;
 			box-shadow: inset 0px 0px 0px 1px #242424, inset 0px 2px 1px 0px rgba(255, 255, 255, 0.2);
 		}
 
@@ -1753,7 +1753,7 @@ input, select, textarea {
 	}
 
 		ul li {
-			padding-left: 0.5em;
+			list-style: none;
 		}
 
 	ol {
@@ -1804,10 +1804,10 @@ input, select, textarea {
 					-webkit-transition: background-color .2s ease-in-out;
 					-ms-transition: background-color .2s ease-in-out;
 					transition: background-color .2s ease-in-out;
-					background-color: #444;
+					background-color: #5c4b4b;
 					border-radius: 6px;
 					box-shadow: inset 0px 0px 0px 1px #282828, inset 0px 2px 1px 0px rgba(255, 255, 255, 0.1);
-					color: #2E2E2E !important;
+					color: #ffffff  !important;
 					display: block;
 					font-size: 26px;
 					height: 48px;
@@ -1820,7 +1820,7 @@ input, select, textarea {
 				}
 
 				ul.social li a.fa-twitter {
-					background-color: #2DAAE4;
+					background-color: #f7e4ec;
 				}
 
 				ul.social li a.fa-facebook-f {
@@ -1832,19 +1832,19 @@ input, select, textarea {
 				}
 
 				ul.social li a.fa-linkedin-in {
-					background-color: #006599;
+					background-color: #f7e4ec;
 				}
 
 				ul.social li a.fa-tumblr {
-					background-color: #51718A;
+					background-color: #f7e4ec;
 				}
 
 				ul.social li a.fa-google-plus {
-					background-color: #DA2713;
+					background-color: #f7e4ec;
 				}
 
 				ul.social li a.fa-github {
-					background-color: #FAFAFA;
+					background-color: #f7e4ec;
 				}
 
 				ul.social li a.fa-rss {
@@ -1995,7 +1995,7 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			background-image: none;
-			background-color: #fff;
+			background-color: #f9eded87;
 		}
 
 		.wrapper.style2 {
@@ -2009,7 +2009,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style4 {
-			background-color: #303030;
+			background-color: #ecd6dfa6;
 			color: #999;
 			text-shadow: -1px -1px 0px #181818;
 		}
@@ -2023,7 +2023,7 @@ input, select, textarea {
 			.wrapper.style4 form select,
 			.wrapper.style4 form textarea {
 				border: none;
-				background: #282828;
+				background: #fffafd;
 			}
 
 				.wrapper.style4 form input[type=text]:focus,
@@ -2036,7 +2036,7 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-		background-color: #ffdff2;
+		background-color: #ecd6df6e;
 		text-align: center;
 		position: fixed;
 		left: 0;
