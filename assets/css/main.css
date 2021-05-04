@@ -1923,6 +1923,7 @@ input, select, textarea {
 
 		.box.style1 {
 			padding: 3em 2em 3.5em 2em;
+			border-radius: 10px;
 		}
 
 			.box.style1 h3 {
@@ -1933,12 +1934,30 @@ input, select, textarea {
 			margin-bottom: 0.25em;
 		}
 
+		.box.style2 {
+			border-radius: 10px;
+		}
+
 		.box.style2 .image {
 			position: relative;
 			left: 2em;
 			top: 2em;
 			margin: -4em 0 4em -4em;
 			width: auto;
+		}
+
+		.box.style1:hover, .box.style1:focus, .box.style1:active {
+			-webkit-transform: scale(1.03);
+			transform: scale(1.03);
+			-webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+			transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+		}
+
+		.box.style2:hover, .box.style2:focus, .box.style2:active {
+			-webkit-transform: scale(1.03);
+			transform: scale(1.03);
+			-webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+			transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 		}
 
 /* Icons */
