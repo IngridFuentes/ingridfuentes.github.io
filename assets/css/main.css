@@ -126,7 +126,7 @@ input, select, textarea {
 
 	b, strong {
 		font-weight: 600;
-		color: #3e3e3e;
+		color: #9a5c5c;
 	}
 
 	i, em {
@@ -222,6 +222,14 @@ input, select, textarea {
 		footer > p {
 			font-size: 1.25em;
 		}
+
+	.title-profession{
+		font-size: 22px;
+		margin-left: 18px;
+		font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		margin-top: 5px;
+		color: rgb(134, 98, 103);
+	}
 
 /* Container */
 
@@ -1632,9 +1640,8 @@ input, select, textarea {
 		.image img {
 			display: block;
 			width: 80%;
-			margin-left: 60px;
-    			margin-top: 25px;
-			
+			margin-left: 25px;
+    		margin-top: 25px;
 		}
 
 		.image.fit {
@@ -1646,6 +1653,9 @@ input, select, textarea {
 			display: block;
 			width: 100%;
 			margin: 0 0 2em 0;
+		}
+		.image.image-gif{
+			margin-left: 40px;
 		}
 
 		.image.left {
