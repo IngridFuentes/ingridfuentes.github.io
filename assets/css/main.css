@@ -4245,7 +4245,8 @@ body {
     }
     
     .tech-card {
-        max-width: 700px;
+		max-width: fit-content;
+        /* max-width: 700px; */
         margin: 0 auto;
     }
 }
@@ -4640,4 +4641,187 @@ body {
     .logo-text {
         font-size: 1.5rem;
     }
+}
+
+/* Profile Container Styles */
+/* .profile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tech-card {
+    background: var(--bg-white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--card-border);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  
+
+    .tech-card {
+        padding: 1.5rem;
+		/* max-width: fit-content; */
+		max-width: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+
+    .tech-card {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile-container {
+        padding: 1.5rem 1rem;
+        gap: 1.25rem;
+    }
+
+    .tech-card {
+        padding: 1.25rem;
+    }
+
+    .profile-info {
+        gap: 1.25rem;
+    }
+	.typing-text {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .tech-card {
+		max-width: 20rem;
+        padding: 1rem;
+    }
+
+    .profile-info {
+        gap: 1rem;
+    }
+	.social-links {
+        display: -webkit-inline-box;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+
+    .social-links a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        min-width: auto;
+    }
+
+    /* Language List Adjustments */
+    .language-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+	.language-list li {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Adjust icons if present */
+    .social-links i,
+    .language-list i {
+        font-size: 1rem;
+    }
+	.typing-text {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        max-width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adjust cursor size for smaller screens */
+    .typing-text::after {
+        content: '|';
+        font-size: 1.5rem;
+        animation: blink 0.7s infinite;
+    }
+	.button{
+		font-size: 0.7rem;
+	}
+}
+
+/* Ensure text remains readable */
+@media screen and (max-width: 768px) {
+    .tech-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .tech-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .tech-card p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Handle very small screens */
+@media screen and (max-width: 320px) {
+    .profile-container {
+        padding: 0.75rem;
+    }
+
+    .tech-card {
+        padding: 0.75rem;
+    }
+	.social-links,
+    .language-list {
+        gap: 0.4rem;
+    }
+
+    .social-links a,
+    .language-list li {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+	.typing-text {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .typing-text::after {
+        font-size: 1.25rem;
+    }
+	.button{
+		font-size: 0.7rem;
+	}
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
