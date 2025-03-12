@@ -303,3 +303,46 @@ document.addEventListener('scroll', function() {
         }
     }
 });
+
+// Add this to your existing script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const body = document.body;
+
+    // Create backdrop element
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        backdrop.classList.toggle('active');
+        body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    backdrop.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking nav links
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            backdrop.classList.remove('active');
+            body.style.overflow = '';
+        });
+    });
+
+    // Close menu on window resize if open
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            backdrop.classList.remove('active');
+            body.style.overflow = '';
+        }
+    });
+});
