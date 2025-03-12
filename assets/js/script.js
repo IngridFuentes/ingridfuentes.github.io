@@ -236,7 +236,7 @@ class TypeWriter {
         // Insert txt into element with styling for name
         if (this.txt.includes("Ingrid")) {
             const parts = this.txt.split("Ingrid");
-            this.textElement.innerHTML = `${parts[0]}<strong style="color: var(--secondary)">Ingrid</strong>${parts[1] || ''}`;
+            this.textElement.innerHTML = `${parts[0]}<strong style="color: var(--primary)">Ingrid</strong>${parts[1] || ''}`;
         } else {
             this.textElement.innerHTML = this.txt;
         }
@@ -273,9 +273,9 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
     const textElement = document.querySelector('.typing-text');
     const words = [
-        "Hi! I'm Ingrid!",
-        "Hi! I'm a Developer!",
-        "Hi! I'm a Security Expert!"
+        "Hi, I'm Ingrid!",
+        "Hi, I'm a Developer!",
+        "Hi, I'm a Security Aspirant!"
     ];
     const wait = 3000;
 
