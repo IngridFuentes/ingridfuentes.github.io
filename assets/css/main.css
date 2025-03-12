@@ -2214,9 +2214,6 @@ nav a:hover {
 			margin: 0;
 		}
 
-			#top .image img {
-				/* border-radius: 0; */
-			}
 
 		#top h1 {
 			margin-top: 0.35em;
@@ -4267,6 +4264,7 @@ body {
     .tech-button {
         width: 100%;
         justify-content: center;
+		margin: 5px;
     }
 }
 
@@ -4670,11 +4668,13 @@ body {
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   
-
     .tech-card {
         padding: 1.5rem;
 		/* max-width: fit-content; */
 		max-width: none;
+    }
+	.image img {
+        max-width: 300px;
     }
 }
 
@@ -4686,6 +4686,10 @@ body {
 
     .tech-card {
         max-width: 100%;
+    }
+	.image img {
+        max-width: 250px;
+		margin-left: 3rem;
     }
 }
 
@@ -4705,6 +4709,11 @@ body {
 	.typing-text {
         font-size: 2rem;
         margin-bottom: 1.25rem;
+    }
+	.image img {
+        max-width: 300px;
+        margin: 1.5rem auto;
+		margin-left: 3rem;
     }
 }
 
@@ -4773,6 +4782,11 @@ body {
 	.button{
 		font-size: 0.7rem;
 	}
+	.image img {
+        max-width: 250px;
+        margin: 1rem auto;
+		margin-left: 2rem;
+    }
 }
 
 /* Ensure text remains readable */
@@ -4820,6 +4834,10 @@ body {
 	.button{
 		font-size: 0.7rem;
 	}
+	.image img {
+        max-width: 150px;
+        margin: 0.75rem auto;
+    }
 }
 @keyframes blink {
     0%, 100% { opacity: 1; }
