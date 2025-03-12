@@ -121,7 +121,7 @@ input, select, textarea {
 	}
 
 		a:hover {
-			color: #43bff0 !important;
+			color: #2b0e33 !important;
 		}
 
 		a img {
@@ -1646,12 +1646,11 @@ input, select, textarea {
 
 		.image img {
 			display: block;
-			object-fit: cover;
-			border-radius: 50%;
-			width: 150px;
-			height: 150px;
-			margin-left: 110px;
-    		margin-top: 0;
+			object-fit: contain;
+			aspect-ratio: 1;
+			width: 100%;
+    		margin-right: 2rem;
+    		margin-left: 2rem;
 		}
 
 		.image.fit {
@@ -1968,7 +1967,6 @@ input, select, textarea {
 		.box.style2 .image {
 			position: relative;
 			left: 2em;
-			top: 2em;
 			margin: -4em 0 4em -4em;
 			width: 100%;
 		}
@@ -2067,11 +2065,6 @@ input, select, textarea {
 			text-shadow: -1px -1px 0px #181818;
 		}
 
-			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
-				/* color: #fff; */
-				color: #3c1e1e75;
-			}
-
 			.wrapper.style4 form input[type=text],
 			.wrapper.style4 form input[type=password],
 			.wrapper.style4 form select,
@@ -2116,8 +2109,8 @@ nav {
 .logo-text {
     font-size: 2rem;
     font-weight: 800;
-    color: white;
-    background: var(--gradient-accent);
+    color: #f4bfec;
+    /* background: var(--gradient-accent); */
     padding: 0.2rem 0.8rem;
     border-radius: 8px;
     letter-spacing: 1px;
@@ -2813,6 +2806,7 @@ nav a:hover {
     border-radius: 4px;
 }
 .footer-container {
+	margin-top: 2rem;
     display: flex; 
     gap: 20px; 
     justify-content: center; 
@@ -3022,6 +3016,7 @@ nav a:hover {
 .project-links .button {
     font-size: 0.9em;
     padding: 0.5em 1.5em;
+	background: var(--gradient-primary);
 }
 
 /* Featured Project */
@@ -3115,8 +3110,8 @@ nav a:hover {
 /* Modern Variables */
 :root {
   /* Core Colors */
-  --primary: #6b2fbc;          /* Deep Purple */
-  --secondary: #9d4edd;        /* Medium Purple */
+  --primary: #5619f1 !important;          /* Deep Purple */
+  --secondary: #a774d0 !important;        /* Medium Purple */
   --accent: #e0aaff;          /* Light Purple */
   --accent-pink: #ff9ecd;     /* Soft Pink */
   
@@ -3197,7 +3192,7 @@ body {
 
 /* Modern Navigation */
 #nav {
-  background: var(--bg-white);
+  background: #8847c9;
   backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
@@ -3467,7 +3462,9 @@ body {
     padding-left: 1rem;
     margin: 1.5rem 0;
 }
-
+.cta-section{
+	margin-top: 2rem;
+}
 .cta-text {
     font-size: 1.2rem;
     color: var(--primary-purple);
@@ -3482,6 +3479,7 @@ body {
 }
 
 .button {
+	background: var(--gradient-primary);
     padding: 1rem 2rem;
     border-radius: 30px;
     font-weight: 600;
@@ -3948,7 +3946,7 @@ body {
     /* Core Colors */
     --primary: #2d5af6;
     --secondary: #8c1aff;
-    --accent: #00d4ff;
+    --accent: #fdbdff;
     
     /* Neutral Colors */
     --bg-light: #f8fafc;
@@ -4069,7 +4067,7 @@ body {
 .tech-role {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary);
+    color: blueviolet;
     margin-bottom: 0.5rem;
 }
 
@@ -4081,7 +4079,7 @@ body {
     background: rgba(45,90,246,0.1);
     border-radius: 20px;
     font-size: 0.9rem;
-    color: var(--primary);
+    color: blueviolet;
 }
 
 /* Language Section */
@@ -4363,7 +4361,7 @@ body {
 .typing-title {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--primary);
+    color: blueviolet;
     height: 4rem; /* Fixed height to prevent layout shift */
     display: flex;
     align-items: center;
@@ -4399,7 +4397,7 @@ body {
 /* Security Incident Reports Section Styles */
 .cyber-section-title {
     font-size: 2.5rem;
-    color: var(--primary);
+    color: blueviolet;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -4517,4 +4515,43 @@ body {
         font-size: 2rem;
     }
 }
-  
+
+/* Unified Button Styles */
+.tech-button,
+.download-button {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.tech-button:hover,
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tech-button i,
+.download-button i {
+    font-size: 1.1rem;
+}
+.titles{
+	color: blueviolet;
+}
+.icon{
+	color: #bb568e;
+}
+.title-projects{
+	color: var(--primary);
+}
+.title-resume{
+	color: grey;
+}
