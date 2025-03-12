@@ -80,110 +80,226 @@ document.querySelectorAll('.box, .project-card, .skill-card').forEach(element =>
     observer.observe(element);
 });
 
-// Security Incident Cards
+// Updated Security Incident Cards Script
 const incidents = [
     {
         title: "Brute Force Attack",
-        description: "Brute Force Attack is determined by repeated login attempts targeting the administrator account.",
+        type: "Security Breach",
+        description: "Multiple failed login attempts targeting administrator accounts detected, indicating a potential brute force attack.",
         mitigation: [
-            "Lock accounts after 5 failed attempts",
-            "Set up alerts for repeated failed login attempts",
-            "Implement rate limiting on login endpoints"
+            "Implemented account lockout after 5 failed attempts",
+            "Enhanced logging for authentication attempts",
+            "Deployed adaptive MFA for admin accounts"
         ],
         investigation: [
-            "Analyze events timeline for suspicious activities",
-            "Correlate login attempts with known malicious IPs",
-            "Review access logs to identify attack origin",
-            "Conduct password policy review"
+            "Analyzed authentication logs for pattern recognition",
+            "Traced attack vectors and origin IPs",
+            "Reviewed existing access controls"
         ],
         postIncident: [
-            "Reset compromised account passwords",
-            "Implement multi-factor authentication",
-            "Deploy intrusion prevention system"
+            "Updated access control policies",
+            "Implemented real-time alert system",
+            "Conducted security awareness training"
         ]
     },
     {
         title: "Audit Policy Tampering",
-        description: "Audit policy change detected on DC-SERVER-01. This could impact logging of critical security events.",
+        type: "Policy Violation",
+        description: "Unauthorized modifications to system audit policies detected on critical infrastructure.",
         mitigation: [
-            "Enable real-time alerts for policy changes",
-            "Implement strict change management",
-            "Monitor audit-related events"
+            "Restored original audit policies",
+            "Implemented change monitoring",
+            "Restricted audit policy access"
         ],
         investigation: [
-            "Analyze Event ID 4719 for policy changes",
-            "Review user permissions and access",
-            "Check for concurrent suspicious activity"
+            "Reviewed change management logs",
+            "Identified unauthorized modifications",
+            "Assessed impact on security posture"
         ],
         postIncident: [
-            "Restore original audit policy",
-            "Review audit logs comprehensively",
-            "Restrict audit policy modifications"
+            "Enhanced audit policy controls",
+            "Updated change management procedures",
+            "Implemented integrity monitoring"
         ]
     },
     {
-        title: "Low Virtual Memory Condition",
-        description: "System running low on memory while handling SSH connections. Potential resource exhaustion attack.",
+        title: "Resource Exhaustion",
+        type: "System Security",
+        description: "Critical system resources depleted due to abnormal process behavior and potential DoS attempt.",
         mitigation: [
-            "Increase system memory allocation",
-            "Restrict concurrent SSH connections",
-            "Block malicious IP addresses"
+            "Implemented resource quotas",
+            "Enhanced monitoring systems",
+            "Deployed load balancing solutions"
         ],
         investigation: [
-            "Monitor system resource usage",
-            "Analyze SSH connection patterns",
-            "Review server performance metrics"
+            "Analyzed system performance logs",
+            "Identified resource consumption patterns",
+            "Evaluated system architecture"
         ],
         postIncident: [
-            "Optimize server resources",
-            "Implement connection rate limiting",
-            "Update monitoring thresholds"
+            "Upgraded system resources",
+            "Implemented auto-scaling",
+            "Enhanced monitoring alerts"
         ]
     }
 ];
 
-function createCard(incident) {
-    const card = document.createElement("div");
-    card.classList.add("card", "animate-on-scroll");
+function createIncidentCard(incident) {
+    const card = document.createElement('div');
+    card.className = 'incident-card';
     
     card.innerHTML = `
         <div class="card-header">
             <h3>${incident.title}</h3>
-            <p class="description">${incident.description}</p>
+            <span class="incident-type">${incident.type}</span>
         </div>
-        
-        <div class="card-content">
-            <div class="section">
-                <h4>Mitigation</h4>
-                <ul>
-                    ${incident.mitigation.map(action => `<li>${action}</li>`).join("")}
+        <div class="card-body">
+            <p class="incident-description">${incident.description}</p>
+            
+            <div class="action-section">
+                <h4 class="action-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Mitigation Steps
+                </h4>
+                <ul class="action-list">
+                    ${incident.mitigation.map(action => `
+                        <li class="action-item">${action}</li>
+                    `).join('')}
                 </ul>
             </div>
-            
-            <div class="section">
-                <h4>Investigation</h4>
-                <ul>
-                    ${incident.investigation.map(action => `<li>${action}</li>`).join("")}
+
+            <div class="action-section">
+                <h4 class="action-title">
+                    <i class="fas fa-search"></i>
+                    Investigation Process
+                </h4>
+                <ul class="action-list">
+                    ${incident.investigation.map(action => `
+                        <li class="action-item">${action}</li>
+                    `).join('')}
                 </ul>
             </div>
-            
-            <div class="section">
-                <h4>Post-Incident</h4>
-                <ul>
-                    ${incident.postIncident.map(action => `<li>${action}</li>`).join("")}
+
+            <div class="action-section">
+                <h4 class="action-title">
+                    <i class="fas fa-check-circle"></i>
+                    Post-Incident Actions
+                </h4>
+                <ul class="action-list">
+                    ${incident.postIncident.map(action => `
+                        <li class="action-item">${action}</li>
+                    `).join('')}
                 </ul>
             </div>
         </div>
     `;
-
+    
     return card;
 }
 
-const container = document.getElementById("cards-container");
-if (container) {
-    incidents.forEach(incident => {
-        const card = createCard(incident);
-        container.appendChild(card);
-        observer.observe(card);
-    });
+// Initialize cards when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('cards-container');
+    if (container) {
+        incidents.forEach(incident => {
+            container.appendChild(createIncidentCard(incident));
+        });
+    }
+});
+
+class TypeWriter {
+    constructor(textElement, words, wait = 3000) {
+        this.textElement = textElement;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.type();
+        this.isDeleting = false;
+    }
+
+    type() {
+        // Current word index
+        const current = this.wordIndex % this.words.length;
+        // Get full text of current word
+        const fullTxt = this.words[current];
+
+        // Check if deleting
+        if(this.isDeleting) {
+            // Remove char
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            // Add char
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        // Insert txt into element with styling for name
+        if (this.txt.includes("Ingrid")) {
+            const parts = this.txt.split("Ingrid");
+            this.textElement.innerHTML = `${parts[0]}<strong style="color: var(--secondary)">Ingrid</strong>${parts[1] || ''}`;
+        } else {
+            this.textElement.innerHTML = this.txt;
+        }
+
+        // Initial Type Speed
+        let typeSpeed = 100;
+
+        if(this.isDeleting) {
+            typeSpeed /= 2; // Faster deletion
+        }
+
+        // If word is complete
+        if(!this.isDeleting && this.txt === fullTxt) {
+            // Make pause at end
+            typeSpeed = this.wait;
+            // Set delete to true
+            this.isDeleting = true;
+        } else if(this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            // Move to next word
+            this.wordIndex++;
+            // Pause before start typing
+            typeSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
+    }
 }
+
+// Init On DOM Load
+document.addEventListener('DOMContentLoaded', init);
+
+// Init App
+function init() {
+    const textElement = document.querySelector('.typing-text');
+    const words = [
+        "Hi! I'm Ingrid!",
+        "Hi! I'm a Developer!",
+        "Hi! I'm a Security Expert!"
+    ];
+    const wait = 3000;
+
+    // Init TypeWriter
+    new TypeWriter(textElement, words, wait);
+}
+
+// Optional: Add replay functionality
+function replayTyping() {
+    const typingText = document.querySelector('.typing-text');
+    typingText.innerHTML = '';
+    charIndex = 0;
+    typingText.parentElement.classList.remove('typing-complete');
+    setTimeout(type, 500);
+}
+
+// Optional: Replay typing effect when scrolling back to top
+document.addEventListener('scroll', function() {
+    const intro = document.querySelector('.intro-header');
+    const rect = intro.getBoundingClientRect();
+    
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        if (!typingText.parentElement.classList.contains('typing-complete')) {
+            replayTyping();
+        }
+    }
+});
