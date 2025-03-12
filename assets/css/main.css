@@ -1961,13 +1961,14 @@ input, select, textarea {
 		}
 
 		.box.style2 h3 {
-			margin-bottom: 0.25em;
+			margin-top: 1rem;
+    		margin-bottom: 1em;
 		}
 
 		.box.style2 .image {
 			position: relative;
 			left: 2em;
-			margin: -4em 0 4em -4em;
+			margin: -4em 0 -4em -4em;
 			width: 100%;
 		}
 
