@@ -2629,8 +2629,8 @@ nav a:hover {
   }
   iframe {
 	width: 100%;
-	height: 450px;
   }
+  
   .main-title {
     font-size: 2rem;
     font-weight: bold;
@@ -4861,4 +4861,59 @@ body {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+/* Resume Viewer Styles */
+.resume-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.resume-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-purple);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: var(--secondary-purple);
+    transform: translateY(-2px);
+}
+
+.resume-viewer {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+}
+
+.resume-viewer iframe {
+    border: none;
+    width: 100%;
+    min-height: 1000px; /* Fallback height if JavaScript fails */
+    transition: height 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .resume-viewer iframe {
+        min-height: 500px;
+    }
+}
+
+.signature {
+	margin-top: 8rem;
 }

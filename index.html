@@ -33,7 +33,7 @@
 		<nav>
 			<div class="nav-container">
 				<div class="nav-logo">
-					<div class="logo-text">IF</div>
+					<div class="logo-text">Ingrid Fuentes</div>
 				</div>
 				<div class="nav-links" id="navLinks">
 					<a href="#home" class="nav-active">Home</a>
@@ -343,12 +343,24 @@
 			<div class="container">
 				<header>
 					<h2 class="titles">Professional Experience</h2>
-					<p class="title-resume">Download my resume to learn more about my experience and qualifications</p>
+					<p class="title-resume">View or download my complete resume below</p>
 				</header>
-				<div class="button-container">
-					<a href="images/IngridFuentesresumewebsite.pdf" download class="download-button">
-						<i class="fas fa-download"></i> Download Resume
-					</a>
+				<div class="resume-container">
+					<div class="resume-actions">
+						<a href="https://docs.google.com/document/d/17LTdC2hgaRRDRVUkQtlqbcDphMyOpag5c1L3531-O3E/edit?usp=sharing" target="_blank" class="download-button">
+							<i class="fas fa-external-link-alt"></i> Open in Google Docs
+						</a>
+					</div>
+					<div class="resume-viewer" id="resume-viewer">
+						<iframe
+							id="resume-iframe"
+							src="https://docs.google.com/document/d/17LTdC2hgaRRDRVUkQtlqbcDphMyOpag5c1L3531-O3E/preview"
+							width="100%"
+							height="800px"
+							style="border: none;"
+							allowfullscreen
+						></iframe>
+					</div>
 				</div>
 			</div>
 		</article>
@@ -359,7 +371,10 @@
 				<header>
 					<h2 class="titles">Let's Connect!</h2>
 				</header>
-				<div class="calendly-inline-widget" data-url="https://calendly.com/ingridfuentes" style="min-width:320px;height:630px;"></div>
+				<div class="calendly-inline-widget" 
+					data-url="https://calendly.com/ingridfuentes" 
+					style="min-width:320px; height:630px; background:transparent;"
+				></div>
 				<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 				<div class="image-container">
 					<img class="signature" src="assets/css/images/ingridsignature.png" alt="Ingrid's signature"/>
