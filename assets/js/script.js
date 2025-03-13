@@ -346,24 +346,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-// Add this to your existing script.js file
-document.addEventListener('DOMContentLoaded', function() {
-    const iframe = document.getElementById('resume-iframe');
-    
-    if (iframe) {
-        iframe.onload = function() {
-            // Give PDF time to load
-            setTimeout(() => {
-                // Get the PDF document height
-                const height = iframe.contentWindow.document.body.scrollHeight;
-                iframe.style.height = height + 'px';
-                
-                // Add event listener for window resize
-                window.addEventListener('resize', function() {
-                    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-                });
-            }, 1000);
-        };
-    }
-});
