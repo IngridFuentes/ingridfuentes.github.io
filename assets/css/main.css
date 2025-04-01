@@ -4915,5 +4915,69 @@ body {
 }
 
 .signature {
-	margin-top: 8rem;
+	margin-top: 10rem;
 }
+.organizations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px;
+}
+
+.organization-card {
+    background: #f8f9fa; /* Light background */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.organization-card:hover {
+    transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+    .organizations {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .organizations {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+}
+.organization-card {
+	position: relative;
+	padding: 20px;
+	margin: 10px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	background-color: #f4f4f4;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  .organization-card:hover {
+	background-color: #e0e0e0;
+  }
+  
+  .organization-info {
+	display: none;
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+  }
+  
+  .organization-card:hover .organization-info {
+	display: block;
+  }
+  
