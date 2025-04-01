@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             await new Promise(resolve => setTimeout(resolve, 30));
             lineElement.textContent += char;
         }
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 200));
     }
 
     async function loadTerminal() {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         article.style.transform = 'translateY(0)';
                     }, index * 200);
                 });
-            }, 500);
+            }, 400);
         }, 1000);
     }
 
