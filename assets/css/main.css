@@ -4917,15 +4917,15 @@ body {
 .signature {
 	margin-top: 10rem;
 }
-/* .organizations {
+.organizations {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    /* gap: 20px; Spacing between cards */
-    /* padding: 20px; */
-/* } */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px;
+}
 
-/* .organization-card {
-    background: #f8f9fa;
+.organization-card {
+    background: #f8f9fa; /* Light background */
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -4936,19 +4936,19 @@ body {
 
 .organization-card:hover {
     transform: translateY(-5px);
-} */
-/* @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .organizations {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
     }
 }
 
 @media (max-width: 480px) {
     .organizations {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 column for mobile */
     }
-} */
-/* .organization-card {
+}
+.organization-card {
 	position: relative;
 	padding: 20px;
 	margin: 10px;
@@ -4961,9 +4961,9 @@ body {
   
   .organization-card:hover {
 	background-color: #e0e0e0;
-  } */
+  }
   
-  /* .organization-info {
+  .organization-info {
 	display: none;
 	position: absolute;
 	bottom: -20px;
@@ -4979,95 +4979,5 @@ body {
   
   .organization-card:hover .organization-info {
 	display: block;
-  }  */
-
-  /* Grid layout for organizations */
-.organizations {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Card styling */
-.organization-card {
-    position: relative;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-}
-
-/* Hover effect for desktop */
-.organization-card:hover {
-    transform: translateY(-5px);
-    background-color: #e0e0e0;
-	z-index: 1000;
-}
-
-/* Hide checkbox input */
-.toggle-info {
-    display: none;
-}
-
-/* Info box - initially hidden */
-.organization-info {
-    display: none;
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-    width: 90%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    margin-top: 10px;
-    z-index: 1000;
-}
-
-/* Desktop: Show info on hover */
-@media (hover: hover) {
-    .organization-card:hover .organization-info {
-        display: block;
-    }
-}
-
-/* Mobile: Show info on click */
-.toggle-info:checked + .organization-info {
-    display: block;
-}
-
-/* Responsive: Two columns on tablets */
-@media (max-width: 768px) {
-    .organizations {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Responsive: Single column on mobile */
-@media (max-width: 480px) {
-    .organizations {
-        grid-template-columns: 1fr;
-    }
-}
-
-.learn-more {
-    display: inline-block;
-    margin-top: 10px;
-    color: #0073e6;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease-in-out;
-}
-
-.learn-more:hover {
-    text-decoration: underline;
-    color: #005bb5;
-}
+  }
+  
