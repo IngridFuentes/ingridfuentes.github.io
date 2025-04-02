@@ -4904,9 +4904,9 @@ body {
 .resume-viewer iframe {
     border: none;
     width: 100%;
-    min-height: 1000px; /* Fallback height if JavaScript fails */
+    min-height: 1000px;
     transition: height 0.3s ease;
-}
+} 
 
 @media screen and (max-width: 768px) {
     .resume-viewer iframe {
