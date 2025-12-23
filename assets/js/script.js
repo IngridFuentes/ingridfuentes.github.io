@@ -275,7 +275,7 @@ function init() {
     const words = [
         "Hi, I'm Ingrid!",
         "Hi, I'm a Developer!",
-        "Hi, I'm a Security Aspirant!"
+        "Hi, I'm a Security Passionate!"
     ];
     const wait = 3000;
 

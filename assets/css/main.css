@@ -4981,3 +4981,232 @@ body {
 	display: block;
   }
   
+/* Two Column Project Layout with Equal Heights */
+.two-column-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: stretch;
+}
+
+.two-column-projects .featured-project {
+    display: flex;
+    height: 100%;
+}
+
+.two-column-projects .box {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Center and style title */
+.two-column-projects .title-projects {
+    text-align: center;
+    min-height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.two-column-projects .title-projects a {
+    display: block;
+}
+
+/* Style hackathon subtitle */
+.two-column-projects .hackathon-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Make video containers smaller */
+.two-column-projects .video-container {
+    width: 100%;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.two-column-projects .video-container > div {
+    position: relative;
+    padding-bottom: 45%;
+    height: 0;
+    overflow: hidden;
+}
+
+.two-column-projects .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make project description fill remaining space */
+.two-column-projects .project-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.two-column-projects .project-description p {
+    flex: 1;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.two-column-projects .project-links {
+    margin-top: auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 980px) {
+    .two-column-projects {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .two-column-projects {
+        gap: 1rem;
+    }
+    
+    .two-column-projects .box {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .two-column-projects .box {
+        padding: 1rem;
+    }
+}
+
+/* Skills Section - 4 Equal Height Cards */
+#work .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* KEY: Makes all cards same height */
+}
+
+#work .col-3 {
+    display: flex; /* Make column flex container */
+}
+
+#work .box.style1 {
+    width: 100%;
+    height: 100%; /* Fill column height */
+    display: flex;
+    flex-direction: column;
+}
+
+#work .box.style1 i {
+    margin-bottom: 1rem;
+    flex-shrink: 0; /* Icon doesn't shrink */
+}
+
+#work .box.style1 h3 {
+    min-height: 3rem; /* Consistent title height */
+    margin-bottom: 1rem;
+    flex-shrink: 0; /* Title doesn't shrink */
+}
+
+#work .box.style1 .skills-list {
+    flex: 1; /* Skills list fills remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    padding: 0.5em 0;
+    color: #555;
+    font-size: 0.95em;
+    border-bottom: 1px solid #eee;
+}
+
+.skills-list li:last-child {
+    border-bottom: none;
+}
+
+/* Icon styling */
+/* #work .fa-robot {
+    color: #b026ff;
+} */
+
+/* Responsive */
+@media screen and (max-width: 980px) {
+    #work .col-3 {
+        width: 50%; /* 2 columns on tablet */
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #work .col-3 {
+        width: 100%; /* 1 column on mobile */
+    }
+    
+    #work .box.style1 h3 {
+        min-height: auto;
+    }
+}
+.video-thumbnail-link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+.video-thumbnail-link:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.video-thumbnail-link img {
+    object-fit: cover; /* Ensures image fills container properly */
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background 0.3s ease;
+    pointer-events: none; /* Allows click to pass through to link */
+}
+
+.video-thumbnail-link:hover .play-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.play-overlay i {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.play-overlay span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
