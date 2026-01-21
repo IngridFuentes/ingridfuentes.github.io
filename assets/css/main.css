@@ -4404,7 +4404,72 @@ body {
     }
 }
 
+/* Security Incident Reports Section Styles */
+/* .cyber-section-title {
+    font-size: 2.5rem;
+    color: blueviolet;
+    margin-bottom: 1rem;
+    text-align: center;
+}
 
+.section-subtitle {
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.incident-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.incident-card {
+    background: var(--bg-white);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.incident-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(107, 47, 188, 0.15);
+} */
+
+.card-header {
+    background: var(--gradient-primary);
+    padding: 1.5rem;
+    color: white;
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+/* .incident-type {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+} */
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* .incident-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+} */
 
 .action-section {
     margin-bottom: 1.5rem;
@@ -4451,14 +4516,14 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .incident-grid {
+    /* .incident-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
     .cyber-section-title {
         font-size: 2rem;
-    }
+    } */
 }
 
 /* Unified Button Styles */

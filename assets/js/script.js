@@ -81,131 +81,131 @@ document.querySelectorAll('.box, .project-card, .skill-card').forEach(element =>
 });
 
 // Updated Security Incident Cards Script
-const incidents = [
-    {
-        title: "Brute Force Attack",
-        type: "Security Breach",
-        description: "Multiple failed login attempts targeting administrator accounts detected, indicating a potential brute force attack.",
-        mitigation: [
-            "Implemented account lockout after 5 failed attempts",
-            "Enhanced logging for authentication attempts",
-            "Deployed adaptive MFA for admin accounts"
-        ],
-        investigation: [
-            "Analyzed authentication logs for pattern recognition",
-            "Traced attack vectors and origin IPs",
-            "Reviewed existing access controls"
-        ],
-        postIncident: [
-            "Updated access control policies",
-            "Implemented real-time alert system",
-            "Conducted security awareness training"
-        ]
-    },
-    {
-        title: "Audit Policy Tampering",
-        type: "Policy Violation",
-        description: "Unauthorized modifications to system audit policies detected on critical infrastructure.",
-        mitigation: [
-            "Restored original audit policies",
-            "Implemented change monitoring",
-            "Restricted audit policy access"
-        ],
-        investigation: [
-            "Reviewed change management logs",
-            "Identified unauthorized modifications",
-            "Assessed impact on security posture"
-        ],
-        postIncident: [
-            "Enhanced audit policy controls",
-            "Updated change management procedures",
-            "Implemented integrity monitoring"
-        ]
-    },
-    {
-        title: "Resource Exhaustion",
-        type: "System Security",
-        description: "Critical system resources depleted due to abnormal process behavior and potential DoS attempt.",
-        mitigation: [
-            "Implemented resource quotas",
-            "Enhanced monitoring systems",
-            "Deployed load balancing solutions"
-        ],
-        investigation: [
-            "Analyzed system performance logs",
-            "Identified resource consumption patterns",
-            "Evaluated system architecture"
-        ],
-        postIncident: [
-            "Upgraded system resources",
-            "Implemented auto-scaling",
-            "Enhanced monitoring alerts"
-        ]
-    }
-];
+// const incidents = [
+//     {
+//         title: "Brute Force Attack",
+//         type: "Security Breach",
+//         description: "Multiple failed login attempts targeting administrator accounts detected, indicating a potential brute force attack.",
+//         mitigation: [
+//             "Implemented account lockout after 5 failed attempts",
+//             "Enhanced logging for authentication attempts",
+//             "Deployed adaptive MFA for admin accounts"
+//         ],
+//         investigation: [
+//             "Analyzed authentication logs for pattern recognition",
+//             "Traced attack vectors and origin IPs",
+//             "Reviewed existing access controls"
+//         ],
+//         postIncident: [
+//             "Updated access control policies",
+//             "Implemented real-time alert system",
+//             "Conducted security awareness training"
+//         ]
+//     },
+//     {
+//         title: "Audit Policy Tampering",
+//         type: "Policy Violation",
+//         description: "Unauthorized modifications to system audit policies detected on critical infrastructure.",
+//         mitigation: [
+//             "Restored original audit policies",
+//             "Implemented change monitoring",
+//             "Restricted audit policy access"
+//         ],
+//         investigation: [
+//             "Reviewed change management logs",
+//             "Identified unauthorized modifications",
+//             "Assessed impact on security posture"
+//         ],
+//         postIncident: [
+//             "Enhanced audit policy controls",
+//             "Updated change management procedures",
+//             "Implemented integrity monitoring"
+//         ]
+//     },
+//     {
+//         title: "Resource Exhaustion",
+//         type: "System Security",
+//         description: "Critical system resources depleted due to abnormal process behavior and potential DoS attempt.",
+//         mitigation: [
+//             "Implemented resource quotas",
+//             "Enhanced monitoring systems",
+//             "Deployed load balancing solutions"
+//         ],
+//         investigation: [
+//             "Analyzed system performance logs",
+//             "Identified resource consumption patterns",
+//             "Evaluated system architecture"
+//         ],
+//         postIncident: [
+//             "Upgraded system resources",
+//             "Implemented auto-scaling",
+//             "Enhanced monitoring alerts"
+//         ]
+//     }
+// ];
 
-function createIncidentCard(incident) {
-    const card = document.createElement('div');
-    card.className = 'incident-card';
+// function createIncidentCard(incident) {
+//     const card = document.createElement('div');
+//     card.className = 'incident-card';
     
-    card.innerHTML = `
-        <div class="card-header">
-            <h3>${incident.title}</h3>
-            <span class="incident-type">${incident.type}</span>
-        </div>
-        <div class="card-body">
-            <p class="incident-description">${incident.description}</p>
+//     card.innerHTML = `
+//         <div class="card-header">
+//             <h3>${incident.title}</h3>
+//             <span class="incident-type">${incident.type}</span>
+//         </div>
+//         <div class="card-body">
+//             <p class="incident-description">${incident.description}</p>
             
-            <div class="action-section">
-                <h4 class="action-title">
-                    <i class="fas fa-shield-alt"></i>
-                    Mitigation Steps
-                </h4>
-                <ul class="action-list">
-                    ${incident.mitigation.map(action => `
-                        <li class="action-item">${action}</li>
-                    `).join('')}
-                </ul>
-            </div>
+//             <div class="action-section">
+//                 <h4 class="action-title">
+//                     <i class="fas fa-shield-alt"></i>
+//                     Mitigation Steps
+//                 </h4>
+//                 <ul class="action-list">
+//                     ${incident.mitigation.map(action => `
+//                         <li class="action-item">${action}</li>
+//                     `).join('')}
+//                 </ul>
+//             </div>
 
-            <div class="action-section">
-                <h4 class="action-title">
-                    <i class="fas fa-search"></i>
-                    Investigation Process
-                </h4>
-                <ul class="action-list">
-                    ${incident.investigation.map(action => `
-                        <li class="action-item">${action}</li>
-                    `).join('')}
-                </ul>
-            </div>
+//             <div class="action-section">
+//                 <h4 class="action-title">
+//                     <i class="fas fa-search"></i>
+//                     Investigation Process
+//                 </h4>
+//                 <ul class="action-list">
+//                     ${incident.investigation.map(action => `
+//                         <li class="action-item">${action}</li>
+//                     `).join('')}
+//                 </ul>
+//             </div>
 
-            <div class="action-section">
-                <h4 class="action-title">
-                    <i class="fas fa-check-circle"></i>
-                    Post-Incident Actions
-                </h4>
-                <ul class="action-list">
-                    ${incident.postIncident.map(action => `
-                        <li class="action-item">${action}</li>
-                    `).join('')}
-                </ul>
-            </div>
-        </div>
-    `;
+//             <div class="action-section">
+//                 <h4 class="action-title">
+//                     <i class="fas fa-check-circle"></i>
+//                     Post-Incident Actions
+//                 </h4>
+//                 <ul class="action-list">
+//                     ${incident.postIncident.map(action => `
+//                         <li class="action-item">${action}</li>
+//                     `).join('')}
+//                 </ul>
+//             </div>
+//         </div>
+//     `;
     
-    return card;
-}
+//     return card;
+// }
 
 // Initialize cards when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('cards-container');
-    if (container) {
-        incidents.forEach(incident => {
-            container.appendChild(createIncidentCard(incident));
-        });
-    }
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     const container = document.getElementById('cards-container');
+//     if (container) {
+//         incidents.forEach(incident => {
+//             container.appendChild(createIncidentCard(incident));
+//         });
+//     }
+// });
 
 class TypeWriter {
     constructor(textElement, words, wait = 3000) {
