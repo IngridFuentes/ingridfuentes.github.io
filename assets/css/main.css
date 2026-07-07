@@ -5210,3 +5210,12 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
 }
+.tech-description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.tech-description p {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
